@@ -5,17 +5,17 @@ kubectl apply -f pod-quotes-DB.yaml
 sleep 5;
 kubectl apply -f ClusterIP-quotesDB.yaml
 
-echo "-------- Inicalizando API de Imagem --------"
+echo "\n-------- Inicalizando API de Imagem --------"
 kubectl apply -f pod-quotes-images-API.yaml
 kubectl apply -f ClusterIP-images-api.yaml
 sleep 10;
 
-echo "-------- Inicalizando API da página principal --------"
+echo "\n-------- Inicalizando API da página principal --------"
 kubectl apply -f pod-quotes-mainpage.yaml
 kubectl apply -f NodePort-quotes-mainpage.yaml
 sleep 10;
 
-echo "-------- Inicalizando API de citações --------"
+echo "\n-------- Inicalizando API de citações --------"
 kubectl apply -f pod-quotes-API.yaml
 kubectl apply -f ClusterIP-quotes-api.yaml
 
