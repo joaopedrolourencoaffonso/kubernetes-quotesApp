@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: quotes-db
+  labels:
+    app: quotes-db
+spec:
+  containers:
+  - name: quotes-db-container
+    image: clusterminator/quotes-db:1.0
+    ports:
+    - containerPort: 3306

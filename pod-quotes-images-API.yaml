@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: images-api
+  labels:
+    app: images-api
+spec:
+  containers:
+  - name: images-api-container
+    image: clusterminator/images-api:latest
+    ports:
+    - containerPort: 8080

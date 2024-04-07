@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: quotes-api
+  labels:
+    app: quotes-api
+spec:
+  containers:
+  - name: quotes-api-container
+    image: clusterminator/quotes-api:1.0
+    ports:
+    - containerPort: 8080
