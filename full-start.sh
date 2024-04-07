@@ -1,28 +1,25 @@
 #!/bin/sh
 
-echo "-------- Inicalizando pods --------";
-kubectl apply -f pod-quotes-API.yaml
-sleep 10;
+echo "-------- Inicalizando Banco de Dados --------";
 kubectl apply -f pod-quotes-DB.yaml
-sleep 10;
-kubectl apply -f pod-quotes-mainpage.yaml
-sleep 10;
-kubectl apply -f pod-quotes-images-API.yaml
-
-echo "\n--- Inicalizando Infraestrutura ---";
-sleep 10;
+sleep 5;
 kubectl apply -f ClusterIP-quotesDB.yaml
-sleep 10;
-kubectl apply -f ClusterIP-quotes-api.yaml
-sleep 10;
+
+echo "-------- Inicalizando API de Imagem --------"
+kubectl apply -f pod-quotes-images-API.yaml
 kubectl apply -f ClusterIP-images-api.yaml
-
-echo "\n--- Disponibilizando aplicação"
 sleep 10;
+
+echo "-------- Inicalizando API da página principal --------"
+kubectl apply -f pod-quotes-mainpage.yaml
 kubectl apply -f NodePort-quotes-mainpage.yaml
-
-
 sleep 10;
+
+echo "-------- Inicalizando API de citações --------"
+kubectl apply -f pod-quotes-API.yaml
+kubectl apply -f ClusterIP-quotes-api.yaml
+
+sleep 5;
 echo "\n--- Pods e serviços funcionando ---"
 kubectl get pod
 kubectl get svc
