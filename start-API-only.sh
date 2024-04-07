@@ -1,9 +1,9 @@
 #!/bin/sh
 
 echo "--- Iniciando pods ---"
-kubectl apply -f pod-quotes-API.yaml
-sleep 10;
 kubectl apply -f pod-quotes-DB.yaml
+sleep 10;
+kubectl apply -f pod-quotes-API.yaml
 
 sleep 10;
 echo "--- Pods funcionando ---"
