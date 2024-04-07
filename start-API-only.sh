@@ -1,21 +1,16 @@
 #!/bin/sh
 
-echo "--- Iniciando pods ---"
+echo "--- Iniciando Banco de Dados ---"
 kubectl apply -f pod-quotes-DB.yaml
-sleep 10;
-kubectl apply -f pod-quotes-API.yaml
+sleep 2;
+kubectl apply -f ClusterIP-quotesDB.yaml
 
-sleep 10;
-echo "--- Pods funcionando ---"
-kubectl get pod
-echo "------------------------"
+
+echo "--- Iniciando API ---"
+kubectl apply -f pod-quotes-API.yaml
+sleep 2;
 
 echo "---- Iniciando serviços ----"
-sleep 10;
-kubectl apply -f ClusterIP-quotesDB.yaml
-sleep 10;
 kubectl apply -f NodePort-quotes-API.yaml
 
-echo "--- Serviços funcionando ---"
-kubectl get svc
-echo "----------------------------"
+echo "Aplicação disponível em localhost:30000/quotes"
