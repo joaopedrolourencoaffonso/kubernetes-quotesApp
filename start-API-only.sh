@@ -6,11 +6,11 @@ sleep 2;
 kubectl apply -f ClusterIP-quotesDB.yaml
 
 
-echo "--- Iniciando API ---"
+echo "\n--- Iniciando API ---"
 kubectl apply -f pod-quotes-API.yaml
 sleep 2;
 
-echo "---- Iniciando serviços ----"
+echo "\n---- Iniciando serviços ----"
 kubectl apply -f NodePort-quotes-API.yaml
 
-echo "Aplicação disponível em localhost:30000/quotes"
+echo "\n-> Aplicação disponível em localhost:30000/quotes"
