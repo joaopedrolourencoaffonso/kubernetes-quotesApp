@@ -10,6 +10,6 @@ echo "\nEncerrando serviços"
 kubectl delete svc database
 kubectl delete svc quotes-api
 kubectl delete svc images-api
-kubectl delete svc nodeport-quotes-mainpage
+kubectl delete svc nodeport-mainpage-api
 
 echo "\nAplicação encerrada"
