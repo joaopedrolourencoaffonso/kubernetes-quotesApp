@@ -16,6 +16,7 @@ kubectl apply -f NodePort-quotes-mainpage.yaml
 sleep 10;
 
 echo "\n-------- Inicalizando API de citações --------"
+kubectl apply -f quotes-api-secret.yaml
 kubectl apply -f pod-quotes-API.yaml
 kubectl apply -f ClusterIP-quotes-api.yaml
 

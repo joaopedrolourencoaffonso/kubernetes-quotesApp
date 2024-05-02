@@ -7,6 +7,9 @@ metadata:
 spec:
   containers:
   - name: quotes-api-container
-    image: clusterminator/quotes-api:1.0
+    image: clusterminator/quotes-api:3.0
     ports:
     - containerPort: 8080
+    envFrom:
+    - secretRef:
+        name: quotes-api-secret
