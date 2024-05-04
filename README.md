@@ -19,7 +19,7 @@ $ sh pull.sh
 Basta usar:
 
 ```bash
-$ sh start-API-only.sh
+$ sh ./api-only-version/start.sh
 ```
 
 A aplicação estará disponível em [localhost:30000/quotes](http://localhost:30000/quotes)
@@ -27,23 +27,40 @@ A aplicação estará disponível em [localhost:30000/quotes](http://localhost:3
 Para encerrar, basta usar:
 
 ```bash
-$ sh stop-API-only.sh
+$ sh ./api-only-version/stop.sh
 ```
 
-## Inicializando a API completa
+## Inicializando a API completa criando os Pods diretamente
 
 Basta fazer:
 
 ```bash
-$ sh full-start.sh
+$ sh ./pod-version/start.sh
 ```
 
-A aplicação estará disponível em [localhost:30000](http://localhost:30000/quotes)
+A aplicação estará disponível em [localhost:30000](http://localhost:30000/)
 
 Para finalizar, basta usar:
 
 ```bash
-$ sh full-stop.sh
+$ sh ./pod-version/stop.sh
+```
+
+
+## Inicializando a API completa criando os Pods com deployments
+
+Basta fazer:
+
+```bash
+$ sh ./deployment-version/start.sh
+```
+
+A aplicação estará disponível em [localhost:30000](http://localhost:30000/)
+
+Para finalizar, basta usar:
+
+```bash
+$ sh ./deployment-version/stop.sh
 ```
 
 ### Observações

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mainpage-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mainpage-api
+  template:
+    metadata:
+      labels:
+        app: mainpage-api
+    spec:
+      containers:
+      - name: mainpage-api-container
+        image: clusterminator/mainpage-api:1.0
+        ports:
+        - containerPort: 8080

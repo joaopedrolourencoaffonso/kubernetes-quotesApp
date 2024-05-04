@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quotes-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quotes-api
+  template:
+    metadata:
+      labels:
+        app: quotes-api
+    spec:
+      containers:
+      - name: quotes-api-container
+        image: clusterminator/quotes-api:3.0
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - secretRef:
+            name: quotes-api-secret

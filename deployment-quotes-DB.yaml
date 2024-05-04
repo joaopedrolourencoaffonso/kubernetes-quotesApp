@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quotes-db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quotes-db
+  template:
+    metadata:
+      labels:
+        app: quotes-db
+    spec:
+      containers:
+      - name: quotes-db-container
+        image: clusterminator/quotes-db:1.0
+        ports:
+        - containerPort: 8080

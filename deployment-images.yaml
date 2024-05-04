@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: images-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: images-api
+  template:
+    metadata:
+      labels:
+        app: images-api
+    spec:
+      containers:
+      - name: images-api-container
+        image: clusterminator/images-api:latest
+        ports:
+        - containerPort: 8080
