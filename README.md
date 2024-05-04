@@ -4,7 +4,7 @@ Uma aplicação simples baseada em flask para demonstrar a utilização do kuber
 
 Para ver como as imagens foram criadas utilizando o Docker, assim como uma forma de executar apenas usando Docker, veja o repositório [docker-quotesApp](https://github.com/joaopedrolourencoaffonso/docker-quotesApp/tree/main). Para as imagens em si, acesse: https://hub.docker.com/u/clusterminator.
 
-> No momento, todos os pods são inicializados diretamente, no futuro, pretendo implementar deployments e secrets
+> No momento, todos os pods são inicializados diretamente, no futuro, pretendo implementar deployments e volumes
 
 ## Download das Imagens
 
