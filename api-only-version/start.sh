@@ -13,6 +13,6 @@ kubectl apply -f ./pod-quotes-API.yaml
 sleep 2;
 
 echo "\n---- Iniciando serviços ----"
-kubectl apply -f ./NodePort-quotes-API.yaml
+kubectl apply -f ./api-only-version/NodePort-quotes-API.yaml
 
 echo "\n-> Aplicação disponível em localhost:30000/quotes"

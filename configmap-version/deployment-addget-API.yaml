@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: addget-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: addget-api
+  template:
+    metadata:
+      labels:
+        app: addget-api
+    spec:
+      containers:
+      - name: addget-api-container
+        image: clusterminator/addget-api:2.0
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: quotes-api-config
